@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 
-export default class Pokemon extends Component {
+export default class Chat extends Component {
   constructor(props){
     super(props)
  
@@ -18,7 +18,7 @@ export default class Pokemon extends Component {
   render(){
   	return(
   		<View>
-  		<Text>Pokemon View</Text>
+  		<Text>Chat View</Text>
   		</View>
   		)
   }
