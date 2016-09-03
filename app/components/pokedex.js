@@ -107,11 +107,13 @@ export default class Pokedex extends Component {
     return(
       <View>
       <View style={{flexDirection:'row', justifyContent:'flex-end', alignItems:'center', margin:10}}>
-      <Text style={{marginTop:55, color:'#d3d3d3'}}>#{x.num}  </Text>
-      <Text style={{marginTop:55, color:'#555', fontWeight:'700', fontSize:13}}>{x.name}  </Text>
+      <Text style={{marginTop:55, fontSize:11, color:'#bbb8b6'}}>#{x.num}  </Text>
+      <Text style={{marginTop:55, color:'#555', fontWeight:'700', fontSize:11}}>{x.name}  </Text>
       <View style={{height:80, alignItems:'center', justifyContent:'center'}} >
        <View style={styles.line} />
+       <TouchableOpacity>
       <Image source={require('../images/pokeOutline.png')} resizeMode="stretch" style={{marginTop:-6,height:50, width:50}} />
+      </TouchableOpacity>
       </View>
       </View>
       </View>
@@ -120,17 +122,23 @@ export default class Pokedex extends Component {
 
   render(){
   	return(
-  		<View style={{flex:1}}>
+  		<View style={{flex:1, backgroundColor:'#e9e9e9'}}>
   		<Nav name="POKEDEX" />
+      <View style={{height:50,flexDirection:'row', margin:10, marginBottom:0, backgroundColor:'#e9e9e9', borderBottomWidth:2, borderColor:'#d3d2d3', borderRadius:5}}></View>
+      <View style={{flexDirection:'row', flex:1, }}>
+      <View style={{flex:1, alignItems:'center', justifyContent:'center'}}></View>
       <ListView
+      alwaysBounceVertical = {false}
+      style = {{flex:1}}
       dataSource = {this.state.dataSource}
       renderRow = {(rowData) => this.balls(rowData)} />
+      </View>
   		</View>
   		)
   }
 }
 
 const styles = StyleSheet.create({
-  line:{height:60, width:2, backgroundColor:'#e3e3e3' },
+  line:{height:60, width:2, backgroundColor:'#bababb' },
  
 });
