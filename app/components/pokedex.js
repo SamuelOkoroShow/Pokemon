@@ -196,7 +196,7 @@ export default class Pokedex extends Component {
       </View>
       <View style={{flexDirection:'row', flex:1, }}>
       <View style={{flex:1, alignItems:'center', justifyContent:'center',}}>
-      <Image source={this.state.image} resizeMode='contain' style={{height:120, width:120}} />
+      <Image source={this.state.image} resizeMode='contain' style={{height:160, width:160}} />
       <View style={{backgroundColor:this.state.color, padding:5, borderRadius:5, alignSelf:'flex-start', margin:10, marginBottom:0}}>
       <Text style={{color:'#fff', fontSize:12, fontWeight:'600'}}>{this.state.name}</Text>
       </View>
