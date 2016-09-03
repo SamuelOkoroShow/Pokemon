@@ -28,6 +28,7 @@ var caterpie = require('../images/010.png');
 // This is a dope link for pokedex data https://pokeapi.co/
 const pokedexData = [
 {
+  "id": 0,
   "num": "001",
   "name": "BULBASAUR",
   'type': "poision",
@@ -35,6 +36,7 @@ const pokedexData = [
   'color': '#a529ae',
   "selected": true
 },{
+  "id": 1,
   "num": "002",
   "name": "IVYSAUR",
   'type': "poision",
@@ -42,6 +44,7 @@ const pokedexData = [
   'color': '#a529ae',
   "selected": false
 },{
+  "id": 2,
   "num": "003",
   "name": "VENUSAUR",
   'type': "poision",
@@ -49,6 +52,7 @@ const pokedexData = [
   'color': '#a529ae',
   "selected": false
 },{
+  "id": 3,
   "num": "004",
   "name": "CHARMANDAR",
   'type': "fire",
@@ -56,6 +60,7 @@ const pokedexData = [
   'color': '#bf4600',
   "selected": false
 },{
+  "id": 4,
   "num": "005",
   "name": "CHARMELEON",
   'type': "fire",
@@ -63,6 +68,7 @@ const pokedexData = [
   'color': '#bf4600',
   "selected": false
 },{
+  "id": 5,
   "num": "006",
   "name": "CHARIZARD",
   'type': "fire",
@@ -71,6 +77,7 @@ const pokedexData = [
   "selected": false
 },
 {
+  "id": 6,
   "num": "007",
   "name": "SQUIRTLE",
   'type': "water",
@@ -79,6 +86,7 @@ const pokedexData = [
   "selected": false
 },
 {
+  "id": 7,
   "num": "008",
   "name": "WARETURTLE",
   'type': "water",
@@ -86,6 +94,7 @@ const pokedexData = [
   'color': '#0084c1',
   "selected": false
 },{
+  "id": 8,
   "num": "009",
   "name": "BLASTOISE",
   'type': "water",
@@ -93,6 +102,7 @@ const pokedexData = [
   'color': '#0084c1',
   "selected": false
 },{
+  "id": 9,
   "num": "010",
   "name": "CATERPIE",
   'type': "bug",
@@ -119,6 +129,27 @@ export default class Pokedex extends Component {
           }
  
   }
+    selectPokemon(val){
+    for(var x = 0; x< pokedexData.length; x++){
+      //first we make everything false
+      pokedexData[x].selected = false
+    }
+    // then we set out val
+    pokedexData[val.id].selected = true;
+
+    // then we reset list views
+    this.setState({
+       name: val.name,
+       color: val.color,
+       number: val.num,
+       image: val.image
+    })
+    this.setState({
+      dataSource: ds.cloneWithRows(pokedexData),
+    })
+  }
+
+
   balls(x){
     if(!x.selected){
         return(
@@ -128,7 +159,7 @@ export default class Pokedex extends Component {
           <Text style={{marginTop:55, color:'#555', fontWeight:'700', fontSize:11}}>{x.name}  </Text>
           <View style={{height:80, alignItems:'center', justifyContent:'center'}} >
            <View style={styles.line} />
-           <TouchableOpacity>
+           <TouchableOpacity onPress = {() => this.selectPokemon(x)}>
           <Image source={require('../images/pokeOutline.png')} resizeMode="stretch" style={{marginTop:-6,height:50, width:50}} />
           </TouchableOpacity>
           </View>
