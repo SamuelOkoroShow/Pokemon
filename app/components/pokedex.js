@@ -167,7 +167,7 @@ export default class Pokedex extends Component {
       <View style={{flex:1, alignItems:'center', justifyContent:'center',}}>
       <Image source={this.state.image} resizeMode='contain' style={{height:120, width:120}} />
       <View style={{backgroundColor:this.state.color, padding:5, borderRadius:5, alignSelf:'flex-start', margin:10, marginBottom:0}}>
-      <Text style={{color:'#fff', fontSize:14, fontWeight:'600'}}>{this.state.name}</Text>
+      <Text style={{color:'#fff', fontSize:12, fontWeight:'600'}}>{this.state.name}</Text>
       </View>
       <View style={{backgroundColor:"#c3c3c3", padding:5, borderRadius:5, alignSelf:'flex-start', margin:10 }}>
       <Text style={{color:'#fff', fontSize:14, fontWeight:'600'}}>#{this.state.number}</Text>
@@ -179,12 +179,12 @@ export default class Pokedex extends Component {
       dataSource = {this.state.dataSource}
       renderRow = {(rowData) => this.balls(rowData)} />
       </View>
-      <View style={{position:"absolute", bottom:0, right:0, height:30, borderTopWidth:1, borderColor:'#d3d3d3', width:width, margin:5, backgroundColor:'rgba(255,255,255,0.4)', justifyContent:'center', alignItems:'center', flexDirection:'row'}}>
+      <View style={{position:"absolute", bottom:0, right:15, height:30, borderTopWidth:2, borderColor:'#d3d3d3', width:width-30, margin:5, backgroundColor:'rgba(255,255,255,0.1)', justifyContent:'center', alignItems:'center', flexDirection:'row'}}>
       <TouchableOpacity>
-      <Image source={require('../images/pokeballicon.png')} resizeMode="contain" style={{height:35, width:35, margin:5, marginTop:-10}} />
+      <Image source={require('../images/pokeballicon.png')} resizeMode="contain" style={{height:35, width:35, margin:5, marginTop:-15}} />
       </TouchableOpacity>
       <TouchableOpacity>
-      <Image source={require('../images/close.png')} resizeMode="contain" style={{height:38, width:38, margin:5, marginTop:-12}} />
+      <Image source={require('../images/close.png')} resizeMode="contain" style={{height:38, width:38, margin:5, marginTop:-17}} />
       </TouchableOpacity>
       </View>
   		</View>
