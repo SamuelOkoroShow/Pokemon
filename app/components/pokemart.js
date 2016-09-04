@@ -111,7 +111,7 @@ export default class Pokemart extends Component {
       </View>
       <View style={{justifyContent:'center', width:280, margin:10}}>
       <Text style={{fontWeight:'600', fontSize:13, color:'#666', marginBottom:7}}>{x.name}</Text>
-      <Text>{x.desc}</Text>
+      <Text style={{fontSize:12, color:'#777', fontWeight:'500', marginBottom:5}}>{x.desc}</Text>
       </View>
       </View>
       </TouchableOpacity>
