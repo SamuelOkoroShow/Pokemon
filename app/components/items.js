@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Nav from './widgets/nav'
+import ItemsNav from './widgets/itemsNav'
 import Footer from "./widgets/pokeballFoot"
 
 var pokeball = require('../images/pokeball.png')
@@ -121,11 +122,7 @@ export default class Items extends Component {
   	return(
   		<View style={{backgroundColor:'#f7f7f7', flex:1}}>
   		<Nav name="ITEMS" />
-      <View style={{height:50,flexDirection:'row', margin:10, alignItems:'center', marginBottom:0, backgroundColor:'#f7f7f7', borderBottomWidth:2, borderColor:'#d3d2d3', justifyContent:'space-around', borderRadius:5}}>
-      <Text style={{color:"#de737b", fontWeight:'600', fontSize:12}}>POKE BALLS</Text>
-      <Text style={{color:"#b3b6b3", fontWeight:'600', fontSize:12}}>CONSUMABLE</Text>
-      <Text style={{color:"#b3b6b3", fontWeight:'600', fontSize:12}}>EQUIPMENT</Text>
-      </View>
+      <ItemsNav />
       <ScrollView
       style = {{marginBottom:30}}
       >
