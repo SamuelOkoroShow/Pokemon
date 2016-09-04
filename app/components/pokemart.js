@@ -126,7 +126,10 @@ export default class Pokemart extends Component {
       <Text style={{color:"#b3b6b3", fontWeight:'600', fontSize:12}}>CONSUMABLE</Text>
       <Text style={{color:"#b3b6b3", fontWeight:'600', fontSize:12}}>EQUIPMENT</Text>
       </View>
-      <View style={{flex:2, alignItems:'center', justifyContent:'flex-start', borderColor:'#d3d3d3', borderBottomWidth:1,}}>
+      <ScrollView
+      style = {{marginBottom:30}}
+      >
+      <View style={{flex:1, alignItems:'center', justifyContent:'flex-start', borderColor:'#d3d3d3', borderBottomWidth:1,}}>
       <View style={{flexDirection:"row",alignItems:'center', justifyContent:'center', margin:15}}>
       <Image source ={require('../images/currency.png')} resizeMode="contain" style={{height:50, width:50}} />
       <Text style={{color:'#888', fontSize:17, margin:5}}>{trainer.credits}</Text>
@@ -143,10 +146,14 @@ export default class Pokemart extends Component {
       <Text style={{fontSize:11, fontWeight:'600', color:'#555'}}>{trainer.items.ultraballs}</Text>
       </View>
       </View>
-      <ListView style={{flex:5, marginBottom:30}} 
+      <ListView style={{flex:5,}} 
+      scrollEnabled={false}
+        contentContainerStyle ={{marginBottom:50}}
+
       dataSource = {this.state.dataSource}
       renderRow = {(rowData) => this.eachItem(rowData)}
       />
+      </ScrollView>
 
       <Footer />
   		</View>)
