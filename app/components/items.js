@@ -40,55 +40,56 @@ var items = [{
   desc: "The most basic of Pokeballs. The standard Pokeball is the easiest to acquire and cheapest to purchase. Standard Pokeballs are most effective at capturing common Pokemon. "
 },{
   name: "GREAT BALL",
-  cost:40,
+  cost:10,
   image: greatball,
   desc: " A good, high-performance Poké Ball that provides a higher Pokémon catch rate than a standard Poké Ball can."
 },
 {
   name: "LOVE BALL",
-  cost:30,
+  cost:2,
   image: loveball,
   desc: "A Poké Ball that works best when catching a Pokémon that is of the opposite gender of your Pokémon."
 },
 {
   name: "SPORT BALL",
-  cost:30,
+  cost:3,
   image: sportball,
   desc: "A special Poké Ball that is used during the Bug-Catching Contest."
 },
 {
   name: "SAFARI BALL",
-  cost:30,
+  cost:3,
   image: safariball,
   desc: "A special Poké Ball that is used only in the Great Marsh. It is recognizable by the camouflage pattern decorating it."
 },
 {
   name: "TIMER BALL",
-  cost:30,
+  cost:3,
   image: timerball,
   desc: "A somewhat different Poké Ball that becomes progressively more effective the more turns that are taken in battle."
 },
 {
   name: "DIVE BALL",
-  cost:35,
+  cost:5,
   image: diveball,
   desc: "A somewhat different Poké Ball that works especially well when catching Pokémon that live underwater."
 },
 {
   name: "QUICK BALL",
-  cost:35,
+  cost:5,
   image: quickball,
   desc: "A somewhat different Poké Ball that has a more successful catch rate if used at the start of a wild encounter."
 },
 {
   name: "ULTRA BALL",
-  cost:80,
+  cost:8,
   image: ultraball,
   desc: "An ultra-high-performance Poké Ball that provides a higher success rate for catching Pokémon than a Great Ball."
 }]
 
 var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-export default class Pokemart extends Component {
+
+export default class Items extends Component {
   constructor(props){
     super(props)
 
@@ -105,12 +106,11 @@ export default class Pokemart extends Component {
       <View style={{alignItems:'center', justifyContent:'center', margin:15}}>
       <Image source={x.image} resizeMode='contain' style={{width:40, height:40}} />
       <View style={{flexDirection:'row', margin:5, alignItems:'center'}}>
-            <Image source ={require('../images/currency.png')} resizeMode="contain" style={{height:10, width:10, margin:5}} />
-            <Text style={{color:'#888'}}>{x.cost}</Text>
+            <Text style={{color:'#888', fontWeight:'600', fontSize:11}}>x {x.cost}</Text>
       </View>
       </View>
       <View style={{justifyContent:'center', width:280, margin:10}}>
-      <Text style={{fontWeight:'600', fontSize:13, color:'#666', marginBottom:7}}>{x.name}</Text>
+      <Text style={{fontWeight:'700', fontSize:13, color:'#666', marginBottom:0}}>{x.name}</Text>
       <Text style={{fontSize:12, color:'#777', fontWeight:'500', marginBottom:5, lineHeight:20}}>{x.desc}</Text>
       </View>
       </View>
@@ -120,7 +120,7 @@ export default class Pokemart extends Component {
   render(){
   	return(
   		<View style={{backgroundColor:'#f7f7f7', flex:1}}>
-  		<Nav name="POKEMART" />
+  		<Nav name="ITEMS" />
       <View style={{height:50,flexDirection:'row', margin:10, alignItems:'center', marginBottom:0, backgroundColor:'#f7f7f7', borderBottomWidth:2, borderColor:'#d3d2d3', justifyContent:'space-around', borderRadius:5}}>
       <Text style={{color:"#de737b", fontWeight:'600', fontSize:12}}>POKE BALLS</Text>
       <Text style={{color:"#b3b6b3", fontWeight:'600', fontSize:12}}>CONSUMABLE</Text>
@@ -129,26 +129,13 @@ export default class Pokemart extends Component {
       <ScrollView
       style = {{marginBottom:30}}
       >
-      <View style={{flex:2, alignItems:'center', justifyContent:'flex-start', borderColor:'#d3d3d3', borderBottomWidth:1,}}>
-      <View style={{flexDirection:"row",alignItems:'center', justifyContent:'center', margin:15}}>
-      <Image source ={require('../images/currency.png')} resizeMode="contain" style={{height:50, width:50}} />
-      <Text style={{color:'#888', fontSize:17, margin:5}}>{trainer.credits}</Text>
-      </View>
-      <View style={{flexDirection:"row",alignItems:'center', justifyContent:'center', margin:5}}>
-      <Image source ={require('../images/backpack.png')} resizeMode="contain" style={{height:25, width:25,}} />
-      </View>
-      <View style={{flexDirection:"row",alignItems:'center', justifyContent:'space-around', width:250}}>
-      <Image source ={pokeball} resizeMode="contain" style={{height:15, width:15, margin:10}} />
-      <Text style={{fontSize:11, fontWeight:'600', color:'#555'}}>{trainer.items.pokeballs}</Text>
-      <Image source ={greatball} resizeMode="contain" style={{height:15, width:15, margin:10}} />
-      <Text style={{fontSize:11, fontWeight:'600', color:'#555'}}>{trainer.items.greatballs}</Text>
-      <Image source ={ultraball} resizeMode="contain" style={{height:15, width:15, margin:10}} />
-      <Text style={{fontSize:11, fontWeight:'600', color:'#555'}}>{trainer.items.ultraballs}</Text>
-      </View>
+      <View style={{flex:3, alignItems:'center', justifyContent:'center', borderColor:'#d3d3d3', borderBottomWidth:1,}}>
+            <Image source ={require('../images/backpack.png')} resizeMode="contain" style={{height:140, width:140}} />
+
       </View>
       <ListView style={{flex:13,}} 
       scrollEnabled={false}
-        contentContainerStyle ={{marginBottom:5}}
+        contentContainerStyle ={{marginBottom:80}}
 
       dataSource = {this.state.dataSource}
       renderRow = {(rowData) => this.eachItem(rowData)}
