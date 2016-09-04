@@ -14,6 +14,7 @@ import {
 var {height, width} = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Nav from './widgets/nav'
+import Footer from "./widgets/pokeballFoot"
 
 var bulbasaur = require('../images/001.png');
 var ivysaur = require('../images/002.png');
@@ -210,14 +211,7 @@ export default class Pokedex extends Component {
       dataSource = {this.state.dataSource}
       renderRow = {(rowData) => this.balls(rowData)} />
       </View>
-      <View style={{position:"absolute", bottom:0, right:15, height:30, borderTopWidth:2, borderColor:'#d3d3d3', width:width-30, margin:5, backgroundColor:'rgba(255,255,255,0.1)', justifyContent:'center', alignItems:'center', flexDirection:'row'}}>
-      <TouchableOpacity>
-      <Image source={require('../images/pokeballicon.png')} resizeMode="contain" style={{height:30, width:30, margin:5, marginTop:-23}} />
-      </TouchableOpacity>
-      <TouchableOpacity>
-      <Image source={require('../images/close.png')} resizeMode="contain" style={{height:34, width:34, margin:5, marginTop:-23}} />
-      </TouchableOpacity>
-      </View>
+      <Footer />
   		</View>
   		)
   }
