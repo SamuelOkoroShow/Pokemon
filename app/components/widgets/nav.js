@@ -24,7 +24,7 @@ export default class Nav extends Component {
       </TouchableOpacity>
       <Text style={{color:'#fff', fontWeight:'600'}}>{this.props.name}</Text>
       <TouchableOpacity>
-      <Image source={require('../../images/trainer.png')} resizeMode='contain' style={{width:40, height:40}}/>
+      <Image source={require('../../images/trainer.png')} resizeMode='contain' style={{width:30, height:30}}/>
   		</TouchableOpacity>
       </View>
   		)

@@ -8,6 +8,7 @@ import {
   Navigator,
   View
 } from 'react-native';
+import Nav from './widgets/nav'
 
 
 export default class Pokemart extends Component {
@@ -18,7 +19,7 @@ export default class Pokemart extends Component {
   render(){
   	return(
   		<View>
-  		<Text>Pokemart View</Text>
+  		<Nav name="POKEMART" />
   		</View>
   		)
   }

@@ -50,7 +50,7 @@ export default class EachPokeDex extends Component {
       </TouchableOpacity>
       <View />
       <TouchableOpacity>
-      <Image source={require('../images/trainer.png')} resizeMode='contain' style={{width:40, height:40}} />
+      <Image source={require('../images/trainer.png')} resizeMode='contain' style={{width:30, height:30}} />
       </TouchableOpacity>
       </View>
       <View style={{flex:1, justifyContent:'flex-end'}}>
