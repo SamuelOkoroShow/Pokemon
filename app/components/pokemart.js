@@ -111,7 +111,7 @@ export default class Pokemart extends Component {
       </View>
       <View style={{justifyContent:'center', width:280, margin:10}}>
       <Text style={{fontWeight:'600', fontSize:13, color:'#666', marginBottom:7}}>{x.name}</Text>
-      <Text style={{fontSize:12, color:'#777', fontWeight:'500', marginBottom:5}}>{x.desc}</Text>
+      <Text style={{fontSize:12, color:'#777', fontWeight:'500', marginBottom:5, lineHeight:20}}>{x.desc}</Text>
       </View>
       </View>
       </TouchableOpacity>
@@ -119,14 +119,14 @@ export default class Pokemart extends Component {
   }
   render(){
   	return(
-  		<View style={{backgroundColor:'#e9e9e9', flex:1}}>
+  		<View style={{backgroundColor:'#f7f7f7', flex:1}}>
   		<Nav name="POKEMART" />
-      <View style={{height:50,flexDirection:'row', margin:10, alignItems:'center', marginBottom:0, backgroundColor:'#e9e9e9', borderBottomWidth:2, borderColor:'#d3d2d3', justifyContent:'space-around', borderRadius:5}}>
+      <View style={{height:50,flexDirection:'row', margin:10, alignItems:'center', marginBottom:0, backgroundColor:'#f7f7f7', borderBottomWidth:2, borderColor:'#d3d2d3', justifyContent:'space-around', borderRadius:5}}>
       <Text style={{color:"#de737b", fontWeight:'600', fontSize:12}}>POKE BALLS</Text>
       <Text style={{color:"#b3b6b3", fontWeight:'600', fontSize:12}}>CONSUMABLE</Text>
       <Text style={{color:"#b3b6b3", fontWeight:'600', fontSize:12}}>EQUIPMENT</Text>
       </View>
-      <View style={{flex:2, alignItems:'center', justifyContent:'flex-start'}}>
+      <View style={{flex:2, alignItems:'center', justifyContent:'flex-start', borderColor:'#d3d3d3', borderBottomWidth:1,}}>
       <View style={{flexDirection:"row",alignItems:'center', justifyContent:'center', margin:15}}>
       <Image source ={require('../images/currency.png')} resizeMode="contain" style={{height:50, width:50}} />
       <Text style={{color:'#888', fontSize:17, margin:5}}>{trainer.credits}</Text>
@@ -143,7 +143,7 @@ export default class Pokemart extends Component {
       <Text style={{fontSize:11, fontWeight:'600', color:'#555'}}>{trainer.items.ultraballs}</Text>
       </View>
       </View>
-      <ListView style={{flex:5, borderColor:'#b7b7b7', borderTopWidth:2, marginBottom:30}} 
+      <ListView style={{flex:5, marginBottom:30}} 
       dataSource = {this.state.dataSource}
       renderRow = {(rowData) => this.eachItem(rowData)}
       />
