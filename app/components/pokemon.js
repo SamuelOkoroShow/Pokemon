@@ -98,7 +98,9 @@ export default class Pokemon extends Component {
         healthColor = "#b7eb9b"
       }
 
-    return(<View style={{height:120, margin:10}}>
+    return(
+      <TouchableOpacity>
+      <View style={{height:120, margin:10}}>
       <Image source ={val.image} style={{height:80, width:80, margin:10}} resizeMode ="contain" />
       <View style={{flexDirection:'row', justifyContent:'space-around', borderBottomWidth:1, borderColor:'#e3e3e3', padding:5}}>
       <Text style={{fontSize:11, color:'#777'}}>CP</Text>
@@ -107,7 +109,9 @@ export default class Pokemon extends Component {
       <View style={{height:5, width:90, borderColor:'#c7c7c7', margin:3, borderWidth:1, borderRadius:5}}>
       <View style={{height:4, width:health, backgroundColor:healthColor, borderRadius:5}} />
       </View>
-      </View>)
+      </View>
+      </ TouchableOpacity>
+      )
   }
 
   render(){
@@ -117,11 +121,21 @@ export default class Pokemon extends Component {
       <PokeNav />
         <ListView 
       dataSource = {this.state.dataSource}
+      style = {{height:390}}
       contentContainerStyle ={{justifyContent: 'space-around', alignItems:'center',
         flexDirection: 'row',
         flexWrap: 'wrap'}}
-      renderRow = {(rowData) => this.eachRow(rowData)}
-      />
+      renderRow = {(rowData) => this.eachRow(rowData)}/>
+      <View style={{flexDirection:'row', flex:1, height:10, padding:15}}>
+      <View style={{flex:1,height:30, borderRadius:5, borderWidth:1, justifyContent:'center', alignItems:'center', borderColor:'#e7e7e7'}}>
+      <Text style={{fontSize:11, color:'#666', fontWeight:'600'}}>TRANSFER</Text>
+      </View>
+       <View style={{flex:1,height:1, borderRadius:5, borderBottomWidth:1, justifyContent:'center', marginTop:20, borderColor:'#e7e7e7'}} />
+
+       <View style={{flex:1,height:30, borderRadius:5, borderWidth:1, justifyContent:'center', alignItems:'center', borderColor:'#e7e7e7'}}>
+      <Text style={{fontSize:11, color:'#666', fontWeight:'600'}}>EVOLVE</Text>
+      </View>
+      </View>
       <Footer />
   		</View>
   		)
