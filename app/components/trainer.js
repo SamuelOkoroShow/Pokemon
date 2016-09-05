@@ -18,7 +18,7 @@ import Nav from './widgets/nav'
 import Footer from "./widgets/pokeballFoot"
 import ItemsNav from './widgets/itemsNav'
 
-currentPokemon = [
+var currentPokemon = [
 {
   name:"Bulbasaur",
   image: burb,

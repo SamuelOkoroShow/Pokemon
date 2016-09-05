@@ -25,7 +25,7 @@ var squirtle = require('../images/007.png');
 var warturtle = require('../images/008.png');
 var caterpie = require('../images/010.png');
 
-currentPokemon = [
+var currentPokemon = [
 {
   name:"Bulbasaur",
   image: burb,

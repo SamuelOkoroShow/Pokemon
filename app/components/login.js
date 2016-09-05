@@ -35,7 +35,7 @@ export default class Login extends Component {
       placeholderTextColor = "#fff"
       style = {styles.textInput}/>
       </View>
-      <TouchableOpacity style={{backgroundColor:'rgba(226,39,44, 0.5)', flex:1, justifyContent:'center', alignItems:'center'}}><Text style={{color:'#fff', fontSize:12, fontWeight:'700'}}>LOG IN</Text></TouchableOpacity>
+      <TouchableOpacity onPress={() => this.props.navigator.push({id:'trainer'})} style={{backgroundColor:'rgba(226,39,44, 0.5)', flex:1, justifyContent:'center', alignItems:'center'}}><Text style={{color:'#fff', fontSize:12, fontWeight:'700'}}>LOG IN</Text></TouchableOpacity>
       <View style={styles.row}>
       <View style={styles.line} /><View style={{flex:1, margin:5}}><Text style={{fontSize:10, fontWeight:'600', color:'#444'}}>OR CONNECT WITH</Text></View><View style = {styles.line} />
       </View>

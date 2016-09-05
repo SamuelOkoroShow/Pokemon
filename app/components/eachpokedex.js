@@ -49,7 +49,7 @@ export default class EachPokeDex extends Component {
       <Icon name="navigate-before" color="#fff" size={30} />
       </TouchableOpacity>
       <View />
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => this.props.navigator.replace({id:'trainer'})}>
       <Image source={require('../images/trainer.png')} resizeMode='contain' style={{width:30, height:30}} />
       </TouchableOpacity>
       </View>
