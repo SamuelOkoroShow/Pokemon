@@ -17,7 +17,7 @@ import Pokemon from './pokemon'
 import Trainer from './trainer'
 import Pokemart from './pokemart'
 import Items from './items'
-import Chat from './chat'
+
 
 
 
@@ -87,13 +87,6 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
-    if (routeId === 'chat') {
-      return (
-        <Chat
-        {...this.props} 
-        navigator={navigator} />
-        );
-    }
   
    }
 
@@ -104,7 +97,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'trainer', name: 'trainer'}}
+     initialRoute={{id: 'login', name: 'login'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )
