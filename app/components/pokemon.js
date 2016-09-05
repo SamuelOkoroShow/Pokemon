@@ -85,8 +85,28 @@ export default class Pokemon extends Component {
   }
 
   eachRow(val){
-    return(<View style={{height:100, marginTop:10}}>
+      var health = Math.floor((Math.random() * 90) + 1);
+      var healthColor
+
+
+      //custom health colors
+      if (health < 20){
+        healthColor = "#f96062"
+      }else if(health > 19 && health < 40){
+        healthColor = "#fbd34e"
+      } else{
+        healthColor = "#b7eb9b"
+      }
+
+    return(<View style={{height:120, margin:10}}>
       <Image source ={val.image} style={{height:80, width:80, margin:10}} resizeMode ="contain" />
+      <View style={{flexDirection:'row', justifyContent:'space-around', borderBottomWidth:1, borderColor:'#e3e3e3', padding:5}}>
+      <Text style={{fontSize:11, color:'#777'}}>CP</Text>
+      <Text style={{fontSize:11, color:'#777'}}>{health}</Text>
+      </View>
+      <View style={{height:5, width:90, borderColor:'#c7c7c7', margin:3, borderWidth:1, borderRadius:5}}>
+      <View style={{height:4, width:health, backgroundColor:healthColor, borderRadius:5}} />
+      </View>
       </View>)
   }
 
