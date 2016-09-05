@@ -117,7 +117,7 @@ export default class Pokemon extends Component {
   render(){
   	return(
   		<View style = {{flex:1, backgroundColor:'#f7f7f7'}}>
-  		<Nav name ="POKEMON" />
+  		<Nav name ="POKEMON" {...this.props} />
       <PokeNav />
         <ListView 
       dataSource = {this.state.dataSource}

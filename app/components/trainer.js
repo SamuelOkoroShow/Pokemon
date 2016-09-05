@@ -94,7 +94,7 @@ export default class Trainer extends Component {
   render(){
   	return(
   		<View style={{flex:1}}>
-      <Nav name="ACE TRAINER WENDY" />
+      <Nav name="ACE TRAINER WENDY" {...this.props} />
       <View style={{flex:1}}>
       <View style={{flex:5, backgroundColor:'#ef8389', flexDirection:'row', alignItems:'center', justifyContent:'space-around'}}>
       <View style={{}}>
@@ -103,7 +103,7 @@ export default class Trainer extends Component {
       MYSTIC
       </Text>
       </View>
-      <Image source = {require('../images/profile.png')} resizeMode="contain" style={{height:170, width:130}} />
+      <Image source = {require('../images/profile.png')} resizeMode="contain" style={{height:180, width:140}} />
       <View style={{flexDirection:'row', borderBottomWidth:2, borderColor:'#fff', borderRadius:5}}>
       <Text style={{color:'#fff', fontWeight:"700", fontSize:12, margin:8}}>
       LV    

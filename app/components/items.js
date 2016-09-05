@@ -121,7 +121,7 @@ export default class Items extends Component {
   render(){
   	return(
   		<View style={{backgroundColor:'#f7f7f7', flex:1}}>
-  		<Nav name="ITEMS" />
+  		<Nav name="ITEMS" {...this.props} />
       <ItemsNav />
       <ScrollView
       style = {{marginBottom:30}}

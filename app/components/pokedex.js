@@ -188,7 +188,7 @@ export default class Pokedex extends Component {
   render(){
   	return(
   		<View style={{flex:1, backgroundColor:'#e9e9e9'}}>
-  		<Nav name="POKEDEX" />
+  		<Nav name="POKEDEX" {...this.props} />
       <View style={{height:50,flexDirection:'row', margin:10, alignItems:'center', marginBottom:0, backgroundColor:'#e9e9e9', borderBottomWidth:2, borderColor:'#d3d2d3', justifyContent:'space-around', borderRadius:5}}>
       <Text style={{color:"#de737b", fontWeight:'600', fontSize:12}}>NUMBER</Text>
       <Text style={{color:"#b3b6b3", fontWeight:'600', fontSize:12}}>LETTER</Text>
