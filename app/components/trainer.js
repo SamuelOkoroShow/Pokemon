@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 var burb = require('../images/001.png');
-var alakazam = require('../images/alakazam.png');
+var alakazam = require('../images/Alakazam.png');
 var mewtwo = require('../images/mewtwo.png');
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Nav from './widgets/nav'
