@@ -16,7 +16,7 @@ import Footer from "./widgets/pokeballFoot"
 
 
 var burb = require('../images/001.png');
-var alakazam = require('../images/alakazam.png');
+var alakazam = require('../images/Alakazam.png');
 var mewtwo = require('../images/mewtwo.png');
 var gyarados = require('../images/Gyarados.png');
 var charmeleon = require('../images/005.png');
